@@ -10,14 +10,14 @@ import java.util.concurrent.*;
 
 /**
  * The main purpose of that app is to benchmark LinkedList vs ArrayList add(int index, E element) method
- * As a result you'll got to .csv files with two columns.
- * First one contains indexes that have been used to insert test data, second one - time elapsed to make insertion (in nanoseconds)
+ * As a result you'll got two .csv files with two columns.
+ * First column contains indexes that have been used to insert test data, second one - time elapsed to make insertion (in nanoseconds)
  * It is highly recommended to follow some rules while changing constants:
  * SIZE % INDEX_SCOPE must be 0
  * INDEX_SCOPE % INDEX_STEP must be 0
  */
 
-public class Main {
+public class PerformanceCheck {
     //test collection size
     static final Integer SIZE = 500000;
     //a range of indexes to be processed by each thread
@@ -117,6 +117,6 @@ class Task implements Callable<List<String>> {
 
     @Override
     public List<String> call() throws Exception {
-        return Main.check(className, start, end);
+        return PerformanceCheck.check(className, start, end);
     }
 }
