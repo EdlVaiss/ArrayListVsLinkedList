@@ -20,12 +20,13 @@ public class ComplexityCheck {
     static final Integer START_SIZE = 5000;
     //insertion iterations amount
     static final Integer INSERT_SESSIONS = 1000;
+    static final String CSV_FILE_PATH = "D:/";
 
     public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException {
         System.out.println("Processing LinkedList");
-        PerformanceCheck.printCSV(check("LinkedList"), "LinkedList");
+        Utils.printCSV(check("LinkedList"), CSV_FILE_PATH + "LinkedListComplexity.csv");
         System.out.println("Processing ArrayList");
-        PerformanceCheck.printCSV(check("ArrayList"), "ArrayList");
+        Utils.printCSV(check("ArrayList"), CSV_FILE_PATH + "ArrayListComplexity.csv");
     }
 
     static List<String> check(String listType) throws ClassNotFoundException {

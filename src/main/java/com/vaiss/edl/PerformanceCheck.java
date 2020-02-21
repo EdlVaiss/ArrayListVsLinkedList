@@ -56,15 +56,10 @@ public class PerformanceCheck {
                 System.out.println(e.getMessage());
             }
         });
-        printCSV(resultList, type);
+        Utils.printCSV(resultList, CSV_FILE_PATH + type + SIZE + ".csv");
     }
 
-    static void printCSV(List<String> list, String name) throws FileNotFoundException {
-        File csvFile = new File(CSV_FILE_PATH + name + SIZE + ".csv");
-        try (PrintWriter pw = new PrintWriter(csvFile)) {
-            list.forEach(pw::println);
-        }
-    }
+
 
     static List<String> check(String listType, int startIndex, int endIndex) throws ClassNotFoundException {
         List<String> resultsList = new ArrayList<>();
